@@ -15,7 +15,7 @@ class weather
     private $humidity;
     private $sunrise;
     private $sunset;
-    protected const API_KEY = "89e1df54965f6ce5ead4e707b153465a";
+    protected const API_KEY = "XXX";
 
     public function __construct($ville)
     {
