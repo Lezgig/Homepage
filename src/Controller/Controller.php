@@ -14,7 +14,8 @@ class Controller{
         $weather = new weather("Londres");
         var_dump($weather->getClouds());
         $form = new StringType();
-        $form->setButton(array("content"=>"Configurer"));
+        $form->setInput(array("placeholder"=>"type me","class"=>"form-control","type"=>"email"));
+        $form->setButton(array("content"=>"Valider"));
         $form->createView();
         echo"</pre>";
     }

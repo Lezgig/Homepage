@@ -68,9 +68,9 @@ final class Php
     /**
      * @var VariableCollection
      */
-    private $requestVariables;
+    private $formVariables;
 
-    public function __construct(DirectoryCollection $includePaths, IniSettingCollection $iniSettings, ConstantCollection $constants, VariableCollection $globalVariables, VariableCollection $envVariables, VariableCollection $postVariables, VariableCollection $getVariables, VariableCollection $cookieVariables, VariableCollection $serverVariables, VariableCollection $filesVariables, VariableCollection $requestVariables)
+    public function __construct(DirectoryCollection $includePaths, IniSettingCollection $iniSettings, ConstantCollection $constants, VariableCollection $globalVariables, VariableCollection $envVariables, VariableCollection $postVariables, VariableCollection $getVariables, VariableCollection $cookieVariables, VariableCollection $serverVariables, VariableCollection $filesVariables, VariableCollection $formVariables)
     {
         $this->includePaths     = $includePaths;
         $this->iniSettings      = $iniSettings;
@@ -82,7 +82,7 @@ final class Php
         $this->cookieVariables  = $cookieVariables;
         $this->serverVariables  = $serverVariables;
         $this->filesVariables   = $filesVariables;
-        $this->requestVariables = $requestVariables;
+        $this->requestVariables = $formVariables;
     }
 
     public function includePaths(): DirectoryCollection
