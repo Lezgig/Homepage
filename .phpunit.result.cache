@@ -1,0 +1,1 @@
+{"version":1,"defects":{"App\\Tests\\WeatherTests::testIfApiNoReturn":3,"App\\Tests\\WeatherTest::testIfApiNoReturn":4,"App\\Tests\\WeatherTest::testIsApiKeyValid":3},"times":{"App\\Tests\\WeatherTests::testIfApiNoReturn":0.108,"App\\Tests\\WeatherTest::testIfApiNoReturn":2.898,"App\\Tests\\WeatherTest::testIsApiKeyValid":7.796}}
