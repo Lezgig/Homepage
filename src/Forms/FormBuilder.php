@@ -17,14 +17,35 @@ abstract class FormBuilder
      */
     protected static function submitButton(array $props = null){
 
-        if($props == null)
-        {
-            return "<button value='submit' class='btn btn-primary' >Valider</button>" ; 
+        if(array_map('is_null',$props)){
+        
+            if(isset($props["value"]) == false)
+            {
+                
+                $props["value"] = "submit";
+
+            }if(isset($props["content"]) == false){
+                
+                $props["content"] = "Send";
+
+            }if(isset($props["class"]) == false ){
+
+                $props["class"] = "btn btn-primary";
+
+            }
+
         }
      
         $Button = "<button value={$props['value']} class='{$props['class']}'>{$props['content']}</button>";
-
+        
         return $Button;
+    }
+
+    private function is_null($table)
+    {
+        if($table == null){
+            return $table;
+        }
     }
 
 }
