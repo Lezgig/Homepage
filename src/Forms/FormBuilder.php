@@ -57,6 +57,11 @@ abstract class FormBuilder implements surroundInterface
      */
     protected static function stringInput(array $props = null){
 
+        if($props == null){
+            $keys = array("placeholder","type","class", "name");
+            $props = array_fill_keys($keys, null);    
+        }
+
         if(array_map('is_null',$props)){
         
             if(isset($props["class"]) == false)
@@ -72,22 +77,25 @@ abstract class FormBuilder implements surroundInterface
 
                 $props["type"] = "email";
 
+            }if(isset($props["name"]) == false){
+                
+                $props["name"] = "none";
             }
 
         }
      
-        $input = "<input type={$props['type']} class='{$props['class']}' placeholder='{$props['placeholder']}'></input>";
+        $input = "<input type={$props['type']} class='{$props['class']}' name={$props['name']} placeholder='{$props['placeholder']}'></input>";
         
         return $input;
     }
     
     /**
-     * request
+     * form
      *
      * @param  mixed $form
      * @return void
      */
-    protected static function request(array $form = null){
+    protected static function form(array $form = null){
 
         if(isset($form["method"]) & $form["method"] == "post" || $form["method"] == "get")
         {
@@ -114,7 +122,7 @@ abstract class FormBuilder implements surroundInterface
             return throw new Exception('request["action"] must be set');
         }
 
-        return "<form method={$form['method']} class={$form['class']} action={$form['action']}>";
+        return "<form method={$form['method']} action={$form['action']}>";
 
     }
 

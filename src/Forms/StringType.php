@@ -43,10 +43,11 @@ class StringType extends FormBuilder implements surroundInterface
     }
     
     /**
-     * Set your button with an associative array with given keys: 
+     * Set your input field with an associative array with given keys: 
      *["class"] 
      *["placeholder"]
      *["type"]
+     *["name"]
      * @param  mixed $param
      * @return void
      */
@@ -66,21 +67,21 @@ class StringType extends FormBuilder implements surroundInterface
     public function setForm(array $form)
     {
        
-        $this->input = parent::stringInput($form);
-        return $this->input;
+        $this->form = parent::form($form);
+        return $this->form;
     }
     
     /**
      * createView
      *
-     * @return void
+     * @return string
      */
-    public function createView()
+    public function createView() :string
     {
 
         $form = $this->form . $this->input . $this->button . "</form>";
         
-        echo $form;
+        return $form;
     }
 
     
