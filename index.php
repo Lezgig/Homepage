@@ -1,9 +1,6 @@
 <?php
-
-require_once("templates/base.html");
+require "vendor/autoload.php";
 
 require_once("src/kernel.php");
-
-require_once("templates/footer.html");
 
 ?>
